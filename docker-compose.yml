@@ -1,0 +1,8 @@
+services:
+  birdnet:
+    build: .
+    platform: linux/arm64   # Raspberry Pi 4/5 (64-bit). Use linux/amd64 on x86.
+    volumes:
+      - ./samples:/app/samples    # Samples (MP4, WAV, etc.)
+      - ./src:/app
+    command: ["python3", "/src/main.py"]
